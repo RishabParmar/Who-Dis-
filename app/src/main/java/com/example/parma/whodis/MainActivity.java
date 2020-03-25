@@ -24,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
     int profileCounter;
     String celebData = "";
-    String profileArray[][] = new String[21][2];
-    int alreadyDone[] = new int[21];
+    String profileArray[][] = new String[22][2];
+    int alreadyDone[] = new int[22];
     int doneCounter;
     String answer;
 
@@ -129,7 +129,9 @@ public class MainActivity extends AppCompatActivity {
         Pattern imagePattern = Pattern.compile("img src=(.*?) ");
         Matcher matcher = imagePattern.matcher(celebData);
         while (matcher.find()) {
+            Log.i("Count ", Integer.toString(profileCounter));
             profileArray[profileCounter][0] = matcher.group(1);
+            Log.i("Data ", profileArray[profileCounter][0]);
             profileCounter++;
         }
 
